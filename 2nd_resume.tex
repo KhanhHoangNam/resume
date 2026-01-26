@@ -1,0 +1,278 @@
+%-------------------------
+% Resume in Latex
+% Author : khanhhn
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Khanh Hoang Nam} \\ \vspace{5pt}
+    \small \faPhone* \texttt{+84 368782814} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{khanhhn.khanhhoangnam@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faMapMarker* \hspace{2pt}\texttt{VN. Citizen}
+    \\ \vspace{-3pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+\small{
+Senior Software Engineer transitioning to Platform Engineer, with 5+ years of experience building and operating production systems in enterprise and regulated environments.\\
+Strong background in backend development, distributed systems, and cloud-native platforms based on Kubernetes.\\
+Hands-on experience in designing CI/CD automation, infrastructure as code, and security integration (SAST/DAST, policy-as-code).\\
+Experienced in designing and operating internal platforms to improve system reliability, deployment safety, and developer productivity.\\
+Motivated to build secure, scalable platform products that enable developer self-service and operational excellence.
+}
+
+%-----------WORK EXPERIENCE-----------
+\section{WORK EXPERIENCE}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {MBBank (Military Commercial Joint Stock Bank)}{Jun. 2022 -- Present}
+    {Platform / DevOps Engineer}{}
+    \resumeItemListStart
+      \resumeItem{Designed and operated a Kubernetes-based internal platform supporting multiple business-critical microservices.}
+      \resumeItem{Built standardized GitLab CI/CD templates and shared pipelines, reducing average deployment time by \textbf{40\%}.}
+      \resumeItem{Integrated SAST/DAST and security quality gates into CI/CD pipelines to enforce secure-by-default deployments.}
+      \resumeItem{Implemented Kubernetes RBAC, network policies, and centralized secret management for multi-team environments.}
+      \resumeItem{Mentored junior engineers on Kubernetes, CI/CD, and platform reliability best practices.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {MBBank (Military Commercial Joint Stock Bank)}{Dec. 2019 -- Jun. 2022}
+    {Software Engineer}{}
+    \resumeItemListStart
+      \resumeItem{Designed and implemented backend services for production systems with a strong focus on scalability and reliability.}
+      \resumeItem{Took ownership of system design, code quality, and production readiness for multiple business-critical services.}
+      \resumeItem{Worked closely with platform and DevOps teams to improve CI/CD automation and deployment workflows.}
+      \resumeItem{Integrated monitoring, logging, and alerting into application design to improve observability and incident response.}
+      \resumeItem{Actively transitioned towards platform engineering by contributing to infrastructure and deployment automation.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Vietsoftware International}{Aug. 2018 -- Dec. 2019}
+    {Software Engineer}{}
+    \resumeItemListStart
+      \resumeItem{Designed and developed backend services with a strong focus on system design, performance, and production readiness.}
+      \resumeItem{Contributed to building scalable and maintainable service-oriented architectures.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{SELECTED PLATFORM PROJECTS}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Distributed Streaming Platform with Apache Pulsar}}{2023}
+\resumeItemListStart
+  \resumeItem{Designed and implemented a distributed streaming system using Apache Pulsar for large-scale data ingestion.}
+  \resumeItem{Deployed and operated two independent Pulsar clusters in a DC--DR topology to ensure high availability and disaster recovery.}
+  \resumeItem{Handled end-to-end system design, cluster installation, configuration, monitoring, and day-to-day operations.}
+  \resumeItem{Focused on scalability, fault tolerance, and stable performance under high-throughput workloads.}
+  \resumeItem{Provided a reliable streaming backbone for multiple backend and data processing services.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Kubernetes Internal Developer Platform (Homelab)}}{2023}
+\resumeItemListStart
+  \resumeItem{Built a Kubernetes-based internal platform to experiment with cloud-native and platform engineering practices.}
+  \resumeItem{Provisioned a 3-master, 5-worker Kubernetes cluster using Vagrant and VirtualBox.}
+  \resumeItem{Installed and configured observability stack including Prometheus, Grafana, and centralized logging.}
+  \resumeItem{Deployed CI/CD components to support automated build and deployment workflows.}
+  \resumeItem{Gained hands-on experience in cluster provisioning, monitoring, and operational automation.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Marketing Platform Cloud Migration (Azure to AWS)}}{2022}
+\resumeItemListStart
+  \resumeItem{Worked as Platform Engineer on migrating a production marketing platform from Azure to AWS.}
+  \resumeItem{Planned and executed migration of compute, storage, and application components across cloud providers.}
+  \resumeItem{Redesigned infrastructure to align with AWS native services and reliability best practices.}
+  \resumeItem{Ensured minimal downtime and data consistency during the migration process.}
+  \resumeItem{Improved platform stability and reduced operational complexity after migration.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Mobile CI/CD Platform for Android and iOS}}{2022}
+\resumeItemListStart
+  \resumeItem{Designed and implemented a CI/CD platform for mobile applications (Android and iOS) using Jenkins.}
+  \resumeItem{Built automated build and release pipelines for Flutter-based mobile projects.}
+  \resumeItem{Configured macOS build agents to support iOS signing, provisioning, and code signing workflows.}
+  \resumeItem{Standardized build, test, and packaging processes for multiple mobile teams.}
+  \resumeItem{Improved release reliability and reduced manual deployment effort for mobile applications.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{Microservices Platform for Enterprise Banking (Biz MBBank)}}{2021}
+\resumeItemListStart
+  \resumeItem{Worked as Software Engineer on migrating a monolithic banking system to microservices architecture.}
+  \resumeItem{Designed and developed core microservices using Java and Spring Boot.}
+  \resumeItem{Built foundational microservice platform to decouple business domains and reduce system dependencies.}
+  \resumeItem{Improved system modularity, scalability, and development velocity across multiple teams.}
+  \resumeItem{Helped establish a more flexible and maintainable architecture for enterprise banking applications.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------CORE SKILLS-----------
+\section{CORE SKILLS}
+\begin{itemize}[leftmargin=0in, label={}]
+\small{\item{
+ \textbf{Platform \& Orchestration} {: Kubernetes, Helm, Rancher} \\ 
+ \textbf{Cloud \& Infrastructure} {: AWS, On-premise, Terraform, Ansible} \\
+ \textbf{CI/CD \& Automation} {: GitLab CI, Jenkins, ArgoCD} \\
+ \textbf{Security \& Compliance} {: Synopsys Coverity, Black Duck, IAM, RBAC, Vault} \\
+ \textbf{Distributed Systems} {: Apache Pulsar, Kafka, Messaging Systems} \\
+ \textbf{Scripting \& Programming} {: Java, Bash, Python, Go, Groovy} \\
+ \textbf{Observability} {: Prometheus, Grafana, ELK} \\
+ \textbf{Databases} {: PostgreSQL, MySQL} \\
+ \textbf{Collaboration} {: Jira, Confluence, GitLab}
+}}
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {FPT Aptech}{Aug. 2016 -- Aug. 2018}
+    {Advanced Diploma in Software Engineering (ADSE)}{FPT Aptech, HN}
+
+  \resumeSubheading
+    {Hanoi University of Mining and Geology}{Jun. 2013 -- Jan. 2018}
+    {Bachelor of Engineering in Software Engineering}{HUMG, HN}
+
+\resumeSubHeadingListEnd
+
+\end{document}
